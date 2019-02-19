@@ -71,11 +71,15 @@
     <Folder Include="Programmability" />
     <Folder Include="Programmability\Functions" />
     <Folder Include="Programmability\Stored Procedures" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\t_CoreTable.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\t_Installation02Specific.sql" />
   </ItemGroup>
 </Project>
