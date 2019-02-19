@@ -57,5 +57,25 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Content Include="Core\**\*.*">
+      <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Build Include="Core\**\*.sql" Exclude="Core\**\*PostDepl*.sql">
+    </Build>
+    <Folder Include="Core\" />
+    <Folder Include="Core\Data\" />
+    <Folder Include="Core\Programmability\" />
+    <Folder Include="Core\Programmability\Stored Procedures\" />
+    <Folder Include="Core\Tables\" />
+    <Folder Include="Data" />
+    <Folder Include="Programmability" />
+    <Folder Include="Programmability\Functions" />
+    <Folder Include="Programmability\Stored Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\t_CoreTable.json" />
   </ItemGroup>
 </Project>
